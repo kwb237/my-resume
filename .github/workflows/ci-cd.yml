@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read # to allow the workflow to read the repository contents
+  id-token: write # to allow OIDC authentication for AWS
+
 env:
   AWS_REGION: us-east-1
   AWS_ROLE: ${{ secrets.AWS_ACTION_ROLE }} # Role to assume for AWS actions
