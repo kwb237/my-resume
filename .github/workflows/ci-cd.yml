@@ -37,7 +37,7 @@ jobs:
 
       - name: build tag and push image
         id: build-and-push
-        run:  |
+        run: |
             docker build -t $${{ steps.ecr-login.outputs.registry }}/${{ env.ECR_REPO_NAME }}:${{envi.IMAGE_TAG }} .
             docker push $${{ steps.ecr-login.outputs.registry }}/${{ env.ECR_REPO_NAME }}:${{ env.IMAGE_TAG }}
             
